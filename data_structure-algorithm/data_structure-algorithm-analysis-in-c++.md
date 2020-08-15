@@ -3,22 +3,9 @@
 ## 数学知识复习
 
 1. 在计算机科学中，除非有特别的声明，所有的对数都是以2为底的。
-
-2. 级数： 
-   $$
-   \sum_{i=1}^Ni^k \approx \frac{N^{k+1}}{|k+1|}， k \neq -1
-   $$
-
-3. 
-
-   调和级数:($H_N$为调和数)
-$$
-H_N = \sum_{i=1}^N \frac{1}{i} \approx log_eN = lnN
-$$
-
-3. 模运算
-
-   如果N整除A-B，那么我们就说A与B模N同余(congruent)，记为A≡B(mod N)。
+2. 级数： ![image-20200815164118165](https://tva1.sinaimg.cn/large/007S8ZIlly1ghrl6ht3lbj309s01vdfo.jpg)
+3. 调和级数:![image-20200815164203378](https://tva1.sinaimg.cn/large/007S8ZIlly1ghrl7859avj309v01udfp.jpg)
+4. 模运算：如果N整除A-B，那么我们就说A与B模N同余(congruent)，记为A≡B(mod N)。
 
 ## C++类
 
