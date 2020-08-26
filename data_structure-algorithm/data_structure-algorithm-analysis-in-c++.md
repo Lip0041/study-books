@@ -67,7 +67,7 @@
       void swap(double &a, double &b);
       ```
 
-3. std::swap和std::move-采用移动替换复制使得效率提高
+3. `std::swap`和`std::move`-采用移动替换复制使得效率提高
 
    1. 正常的通过3次复制进行的值交换——效率低
 

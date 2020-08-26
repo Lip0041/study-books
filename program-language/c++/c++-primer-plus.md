@@ -19,7 +19,7 @@ Table of Contents
    
     **str或sz**表示一空字符结束的字符串，**b**表示布尔值，**p**表示指针，**c**表示单个字符
     
-2. 头文件climits中包含关于整型限制的信息（以符号常量形式定义）
+2. 头文件`climits`中包含关于整型限制的信息（以符号常量形式定义）
 	
 	![截屏2020-08-10 09.43.59](https://tva1.sinaimg.cn/large/007S8ZIlly1ghlm3wiso7j30ln08p0vw.jpg)
 	
@@ -29,15 +29,15 @@ Table of Contents
     type name{value};
     ```
 
-4. sizeof 运算符可对类型名（放置括号中）或变量名（直接跟在sizeof）后面进行计算
+4. sizeof 运算符可对类型名（放置括号中）或变量名（直接跟在`sizeof`）后面进行计算
 
     ![test1](https://tva1.sinaimg.cn/large/007S8ZIlly1ghlm6q16baj30f305zmxp.jpg)
 
     ![res1](https://tva1.sinaimg.cn/large/007S8ZIlly1ghlm71cjlyj30a302gaa0.jpg)
 
-5. cout << hex; 不在屏幕上显示任何内容，只修改cout显示整数的方式（此为以十六进制方式显示）
+5. `cout << hex;` 不在屏幕上显示任何内容，只修改`cout`显示整数的方式（此为以十六进制方式显示）
 
-6. 通常cout会删除结尾的零，使用cout.setf()可以覆盖这种行为，添加一条语句	
+6. 通常`cout`会删除结尾的零，使用`cout.setf()`可以覆盖这种行为，添加一条语句	
 
    ```cpp
    cout.setf(ios_base::fixed, ios_base::floatfield)；
@@ -52,9 +52,9 @@ Table of Contents
 # 复合类型： array & vector & string
 
 1. 只有在定义数组时才可以初始化整个数组，其他时刻不可，但可以使用下标分别给数组中的元素赋值
-2. C++中可读取一行的函数有cin.get()和cin.getline()。
+2. C++中可读取一行的函数有`cin.get()`和`cin.getline()`。
 	
-	> 二者区别：碰到空白——换行符，getline() 读取并用 '\0' 替换，而 get() 不读取不替换，留在输入队列中。
+	> 二者区别：碰到空白——换行符，`getline()` 读取并用 '\0' 替换，而` get() `不读取不替换，留在输入队列中。
 	
 3. C++的string类——表示字符串的实体
 
@@ -72,7 +72,7 @@ Table of Contents
     a != b; // a, b 至少有一个是 string 对象
     ```
 
-4. C++允许在声明**结构变量（不是结构体）**的时候省略关键字struct，两个相同结构的结构变量可以直接赋值，提倡使用**外部结构声明**，不提倡使用外部变量
+4. C++允许在声明**结构变量（不是结构体）**的时候省略关键字`struct`，两个相同结构的结构变量可以直接赋值，提倡使用**外部结构声明**，不提倡使用外部变量
 
 5. 使用 new 和 delete 时应当遵守的规则( malloc 和 free )
 
@@ -84,19 +84,23 @@ Table of Contents
 
 6. 数组名被解释为其第一个元素的地址，而对数组名应用地址运算符(&)时，得到的是整个数组的地址。
 
-7. 使用数组声明来创建数组，int data[10]; 将采用静态联编，即数组的长度在编译时设置
-   使用 new[] 运算符创建数组时，int *pz = new int [size]; 将采用动态联编，即在运行时为数组分配空间，其长度也在运行时设置，对应的用 delete [] 释放其占用的内存。  
+7. 使用数组声明来创建数组，`int data[10]; `将采用静态联编，即数组的长度在编译时设置
+   使用 new[] 运算符创建数组时，`int *pz = new int [size]; `将采用动态联编，即在运行时为数组分配空间，其长度也在运行时设置，对应的用 delete [] 释放其占用的内存。  
 
-8. 模板类vector是**动态数组**的替代品，array是**定长数组**的替代品。
-   - 模板类vector: 声明创建一个名为vt的vector对象，可存储n_elem（可以是变量）个类型为typeName的元素
+8. 模板类`vector`是**动态数组**的替代品，`array`是**定长数组**的替代品。
+   - 模板类`vector`: 声明创建一个名为vt的vector对象，可存储n_elem（可以是变量）个类型为typeName的元素
 
-   		 vector<typeName>  vt(n_elem);
+   		 ```cpp
+   	vector<typeName> vt(n_elem);
+   	```
    	
-   - 模板类array: 声明创建一个名为arr的array对象，包含n_elem（不能是变量）个类型为typeName的元素
+   - 模板类`array`: 声明创建一个名为arr的array对象，包含n_elem（不能是变量）个类型为typeName的元素
+	
+   		```cpp
+   array<typeName, n_elem> arr;
+   	```
    	
-   		array<typeName, n_elem> arr;
-
-   - array对象和数组存储在相同的内存区域（栈），vector对象存储在自由存储区或堆中；可以将一个array对象赋给另一个array对象，而对于数组必须逐元素复制数据。
+   - `array`对象和数组存储在相同的内存区域（栈），`vector`对象存储在自由存储区或堆中；可以将一个array对象赋给另一个array对象，而对于数组必须逐元素复制数据。
 
 # 循环、分支语句 & 关系、逻辑运算符
 
@@ -120,14 +124,15 @@ Table of Contents
 
     
 
-4. cin.get(ch) 与 cin.get()
+4. `cin.get(ch)` 与 `cin.get()`
+	
 	|            属性            |             cin.get(ch)              |   ch = cin.get()    |
 	| :------------------------: | :----------------------------------: | :-----------------: |
 	|     传递输入字符的方式     |             赋给参数 ch              | 将函数返回值赋给 ch |
 	| 用于字符输入时函数的返回值 | istream对象（执行bool转换后为true）  | int 类型的字符编码  |
 	|   到达EOF时函数的返回值    | istream对象（执行bool转换后为false） |         EOF         |
 	
-5. 头文件 < cctype > 中的字符函数
+5. 头文件` < cctype > `中的字符函数
 	| 函数名称  |                            返回值                            |
 	| :-------: | :----------------------------------------------------------: |
 	| isalnum() |               如果参数是字母或者数字，返回true               |
@@ -141,7 +146,7 @@ Table of Contents
 	| isspace() | 如果参数是标准空白字符，如空格、进纸、回车、制表符，返回true |
 	| isupper() |                 如果参数是大写字母，返回true                 |
 
-6. 文件 I/O 的主要步骤：（使用完文件用 close() 方法关闭）
+6. 文件 I/O 的主要步骤：（使用完文件用`close()` 方法关闭）
 
     >   1. 包含头文件 fstream
     >   2. 创建 ifstream 和 ofstream 对象; // ofstream outFile;
